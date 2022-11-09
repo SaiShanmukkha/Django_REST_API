@@ -13,8 +13,6 @@ class BlogPostAdminView(admin.ModelAdmin):
             # if a new object is to be created the try clause will fail due to missing _meta.fields
             return ""
 
-
-
 # Register your models here.
 
 admin.site.register(BlogPost, BlogPostAdminView)
