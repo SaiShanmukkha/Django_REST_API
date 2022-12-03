@@ -11,6 +11,7 @@ class BlogPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogPost
         fields = [
+            "id",
             "title",
             "slug",
             "published_date",
@@ -18,6 +19,7 @@ class BlogPostSerializer(serializers.ModelSerializer):
             "image"
         ]
         read_only_fields = [
+            "id",
             "title",
             "slug",
             "published_date",
@@ -38,5 +40,10 @@ class BlogPostDetailSerializer(serializers.ModelSerializer):
         ]
         read_only_fields =["slug"]
 
-
+class BlogPostSlugs(serializers.ModelSerializer):
+    class Meta:
+        model = BlogPost
+        fields = [
+            "slug"
+        ]
 

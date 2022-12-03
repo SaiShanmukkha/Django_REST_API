@@ -1,4 +1,3 @@
-from email.policy import default
 import uuid
 from django.db import models
 from django.template.defaultfilters import slugify
@@ -20,7 +19,7 @@ class BlogPost(UUIDModel):
     Last_modified_date = models.DateTimeField(help_text="Blog post Last Modified Date", verbose_name="Last Modified Date", editable=False, null=True)
     content_url = models.TextField(help_text='Enter Blog Post Content', verbose_name="Blog Post Body")
     summary = models.TextField(max_length=1000, help_text='Enter a brief description of the Blog Post')
-    image = models.ImageField(upload_to="images/", default="images/todo.png")
+    image = models.ImageField(upload_to="api/static/images/", default="api/static/images/todo.png")
 
     def post_absolute_url(self):
         return reverse('posts-slug', kwargs={'slug':self.slug})
